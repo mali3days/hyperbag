@@ -4,6 +4,11 @@
       alt="Vue logo"
       src="../assets/logo.png"
     >
+    <el-row>
+      <BaseButton type="danger">
+        Danger
+      </BaseButton>
+    </el-row>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
