@@ -1,6 +1,6 @@
 {
-  "name": "vuestarter",
-  "short_name": "vuestarter",
+  "name": "hyperbag",
+  "short_name": "hyperbag",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
