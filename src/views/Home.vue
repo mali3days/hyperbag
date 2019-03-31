@@ -6,7 +6,23 @@
         Aside
       </el-aside>
       <el-main>
-        Main
+        <BaseForm
+          ref="linkForm"
+          :model="linkForm"
+          @submit="submitForm('linkForm')"
+        >
+          <BaseFormItem prop="address">
+            <BaseInput
+              clearable
+              :value.sync="linkForm.address"
+            >
+              <template v-slot:prepend>
+                http://
+              </template>
+            </BaseInput>
+          </BaseFormItem>
+        </BaseForm>
+        {{ linkForm }}
       </el-main>
     </el-container>
     <el-footer>Footer</el-footer>
@@ -15,15 +31,44 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue';
+import { Form as ElForm } from 'element-ui';
 
+const initialLinkFormState = {
+  address: '',
+};
 
 @Component({
   components: {
     HelloWorld,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  linkForm = initialLinkFormState
+
+  submitForm(formName: string) {
+    const form: any = this.$refs[formName];
+    form.$refs.form.validate((valid: boolean) => {
+      if (valid) {
+        console.log('valid!');
+        console.log(this.linkForm);
+        // TODO: understand how to fix error under the commented line
+        // console.log(this[formName]);
+        this.resetForm(formName);
+      } else {
+        console.log('invalid!');
+        return false;
+      }
+      return true;
+    });
+  }
+
+  resetForm(formName: string) {
+    const form: any = this.$refs[formName];
+    form.$refs.form.resetFields();
+    // this.$refs[formName].$refs.form.resetFields();
+  }
+}
 </script>
 
 <style>
