@@ -16,12 +16,12 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class BaseInput extends Vue {
-  @Prop() private value!: string;
+  @Prop() readonly value!: string;
 
-  @Prop() private placeholder!: string;
+  @Prop() readonly placeholder!: string;
 
-  @Prop() private clearable!: boolean;
+  @Prop() readonly disabled!: boolean;
 
-  @Prop() private disabled!: boolean;
+  @Prop({ default: true }) readonly clearable!: boolean;
 }
 </script>

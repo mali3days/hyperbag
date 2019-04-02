@@ -13,7 +13,6 @@
         >
           <BaseFormItem prop="address">
             <BaseInput
-              clearable
               :value.sync="linkForm.address"
             >
               <template v-slot:prepend>
