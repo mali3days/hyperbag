@@ -15,6 +15,9 @@ yarn run serve
 yarn run build
 ```
 
+### Previewing build locally: 
+See [Previewing Locally](https://cli.vuejs.org/guide/deployment.html#previewing-locally).
+
 ### Run your tests
 ```
 yarn run test
