@@ -51,8 +51,6 @@ export default class Home extends Vue {
       if (valid) {
         console.log('valid!');
         console.log(this.linkForm);
-        // TODO: understand how to fix error under the commented line
-        // console.log(this[formName]);
         this.resetForm(formName);
       } else {
         console.log('invalid!');
@@ -65,7 +63,6 @@ export default class Home extends Vue {
   resetForm(formName: string) {
     const form: any = this.$refs[formName];
     form.$refs.form.resetFields();
-    // this.$refs[formName].$refs.form.resetFields();
   }
 }
 </script>
