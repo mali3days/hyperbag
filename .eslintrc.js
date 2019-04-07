@@ -21,6 +21,7 @@ module.exports = {
         ],
       },
     ],
+    'no-shadow': [2, { allow: ['state'] }],
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
